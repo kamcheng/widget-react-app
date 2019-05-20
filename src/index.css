@@ -1,0 +1,46 @@
+body {
+  margin: 0.5rem 0;
+  padding: 0.2rem;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  background-color: #fff;
+}
+
+.boxStyle {
+	padding: 0.2rem;
+}
+
+.boxStyle form {
+	border: 1px solid #ccc;
+	background-color: #fafafa;
+	padding: 0.5rem;
+}
+
+.icon {
+    margin-right: 0.5rem;
+}
+
+.icon i {
+	cursor: pointer;
+	padding: 0.2rem;
+}
+
+.form-control {
+	height: 20px;
+	font-size: 0.8rem;
+	margin-bottom: 0.3rem;
+}
+
+label {
+	margin-bottom: 0.1rem;
+}
+
+.menutools {
+	text-align: center;
+	background-color: #999;
+	padding: 0.5rem;
+}
+
+.hide {
+	display: none;
+}
