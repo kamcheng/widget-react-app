@@ -3,6 +3,7 @@ export const UPDATE_WIDGET = 'UPDATE_WIDGET'
 export const REMOVE_WIDGET = 'REMOVE_WIDGET'
 export const GET_WIDGET = 'GET_WIDGET'
 export const SORT_WIDGET = 'SORT_WIDGET'
+export const SEARCH_WIDGET = 'SEARCH_WIDGET'
 
 let nextId = 0
 export const getWidget = (data, id) => {
@@ -39,9 +40,14 @@ export const sortWidget = (newData) => ({
   payload: newData
 });
 
+export const searchWidget = (newData) => ({
+  type: SEARCH_WIDGET,
+  payload: newData
+});
 
-export const actionTool = (asc) => ({
-  type: 'SORT_ASC_DES',
-  asc: asc
+
+export const actionTool = (show) => ({
+  type: 'ADD_INPUT_VISIBLE',
+  show: show
 });
 

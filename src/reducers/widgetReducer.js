@@ -3,14 +3,15 @@ import {
   UPDATE_WIDGET,
   REMOVE_WIDGET,
   GET_WIDGET,
-  SORT_WIDGET
+  SORT_WIDGET,
+  SEARCH_WIDGET
 } from '../actions'
 
 const updateState = (state, action) => {
    const widget = state[action.index];
    if(widget.id !== action.id) {
      //based on the action.id check the whole list
-   } else {//fruits.splice(2, 1, "Lemon");
+   } else {
      state.splice(action.index, 1, action.payload);
    }
    return state;
@@ -56,6 +57,11 @@ const widgetReducer = (state = [], action) => {
       return newState
 
     case SORT_WIDGET:
+      return [
+        ...action.payload
+      ]
+
+    case SEARCH_WIDGET:
       return [
         ...action.payload
       ]

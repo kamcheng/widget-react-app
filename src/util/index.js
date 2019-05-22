@@ -24,8 +24,12 @@ export const sortedData = (data, prop, isAsc) => {
     return data.sort((a, b) => (a[prop] < b[prop] ? -1 : 1) * (isAsc ? 1 : -1));
 }
 
-export const searchWidgets = (data, query) => {
+const searchFieldNames = ["description", "name"];
+
+export const searchData = (data, query) => {
     return data.filter((widget) => {
-        return widget.name.includes(query)
+        return searchFieldNames.find((field) => {
+            return widget[field].toLowerCase().indexOf(query.toLowerCase()) != -1
+        })
     })
 }

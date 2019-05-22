@@ -1,11 +1,11 @@
 
-const menuReducer = (state = [], action) => {
+const menuReducer = (state = {'show': false}, action) => {
   switch (action.type) {
-    case 'SORT_ASC_DES':
-      return [
+    case 'ADD_INPUT_VISIBLE':
+      return {
         ...state,
-        ...action.asc
-      ]
+        ...{show: action.show}
+      }
 
     default:
       return state

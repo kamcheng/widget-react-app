@@ -41,6 +41,41 @@ label {
 	padding: 0.5rem;
 }
 
-.hide {
-	display: none;
+.menutools .icon {
+	border-right: 1px solid #333;
+    line-height: 22px;
+    padding-right: 0.5rem;
+    cursor: pointer;
 }
+
+.searchInput {
+	padding-left: 10px;
+    position: relative;
+    right: auto;
+    top: auto;
+}
+
+.searchInput input {
+    background-color: rgba(0,0,0,.2);
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+    outline: none;
+    padding-left: 25px;
+    position: relative;
+    transition: width .5s ease;
+    width: 170px;
+}
+
+.searchInput .fa-search {
+	position: absolute;
+    top: 5px;
+    left: 17px;
+}
+
+.hide {display: none}
+
+.show {display: block;}
