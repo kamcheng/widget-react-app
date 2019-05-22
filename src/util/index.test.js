@@ -1,4 +1,4 @@
-import { sortedData, mergeSort, searchWidgets } from '../util'
+import { sortedData, mergeSort, searchData } from '../util'
 
 const testArrObj = [{"id":1, "name":"ccc"},{"id":2, "name":"aaa"},{"id":3, "name":"ddd"},{"id":4, "name":"bbb"}];
 const sortedArrObjASC = [{"id":2, "name":"aaa"},{"id":4, "name":"bbb"},{"id":1, "name":"ccc"},{"id":3, "name":"ddd"}];
@@ -17,12 +17,15 @@ describe("Test mergeSort", () => {
 
 
 
-const searchArrObj = [{"id":1, "name":"ccca"},{"id":2, "name":"aaab"},{"id":3, "name":"dddca"},{"id":4, "name":"bbbca"}];
-const filteredObj = [{"id":1, "name":"ccca"},{"id":3, "name":"dddca"},{"id":4, "name":"bbbca"}];
+const searchArrObj = [{"id":1, "name":"ccca", "description":"test"},{"id":2, "name":"aaab", "description":"test"},
+{"id":3, "name":"dddca", "description":"test"},{"id":4, "name":"bbbca", "description":"test"}];
 
-describe("Test searchWidgets", () => {
+const filteredObj = [{"id":1, "name":"ccca", "description":"test"},{"id":3, "name":"dddca", "description":"test"},
+{"id":4, "name":"bbbca", "description":"test"}];
+
+describe("Test searchData", () => {
     it("Array should be filtered out by name ca", () => {
-        expect(searchWidgets(searchArrObj, "ca"))
+        expect(searchData(searchArrObj, "ca"))
           .toEqual(filteredObj)
     });
 });
