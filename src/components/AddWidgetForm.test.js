@@ -5,7 +5,7 @@ import AddWidgetForm from './AddWidgetForm'
 
 
 it('AddWidgetForm renders correctly', () => {
-  const formFields = {SKU: "", name: "", description:"", date: "", quantity: "", price: ""};
+  const formFields = {SKU: "", name: "", description:"", date: null, quantity: "", price: ""};
   const addWidget = () => {}
   const EditableForm = EditableFormHOC("form");
 

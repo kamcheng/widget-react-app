@@ -7,7 +7,7 @@ export const SEARCH_WIDGET = 'SEARCH_WIDGET'
 
 let nextId = 0
 export const getWidget = (data, id) => {
-  nextId = id;
+  nextId = id + 1;
   return {
     type: GET_WIDGET,
     payload: data
@@ -18,21 +18,19 @@ export const addWidget = (newData) => {
   return {
     type: ADD_WIDGET,
     payload: newData,
-    id: ++nextId
+    id: nextId++
   };
 }
 
-export const updateWidget = (index, id, updatedFields) => ({
+export const updateWidget = (id, updatedFields) => ({
   type: UPDATE_WIDGET,
   payload: updatedFields,
-  index: index,
   id: id
 });
 
-export const removeWidget = (index, id) => ({
+export const removeWidget = (id) => ({
   type: REMOVE_WIDGET,
-  id: id,
-  index: index
+  id: id
 });
 
 export const sortWidget = (newData) => ({

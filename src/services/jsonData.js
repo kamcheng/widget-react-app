@@ -1,145 +1,110 @@
-export const jsonData = [
-  {
-    "id": 1,
-    "name": "Leanne Graham",
-    "SKU": "ABC12345",
-    "description": "Multi-layered client-server neural-net",
-     date: 1558142992700, quantity: 5, price: 23.5
-  },
-  {
-    "id": 2,
-    "name": "Ervin Howell",
-    "SKU": "KLI02147",
-    "description": "Proactive didactic contingency",
-     date: 1558142992700, quantity: 5, price: 23.5
-  },
-  {
-    "id": 3,
-    "name": "Clementine Bauch",
-    "SKU": "POK87451",
-    "description": "Face to face bifurcated interface",
-    date: 1558142992700, quantity: 5, price: 23.5
-  },
-  {
-    "id": 4,
-    "name": "Patricia Lebsack",
-    "SKU": "RTB21045",
-    "description": "Multi-tiered zero tolerance productivity",
-    date: 1558142992700, quantity: 5, price: 23.5
-  },
-  {
-    "id": 5,
-    "name": "Chelsey Dietrich",
-    "SKU": "MNU54124",
-    "description": "User-centric fault-tolerant solution",
-     date: 1558142992700, quantity: 5, price: 23.5
-  },
-  {
-    "id": 6,
-    "name": "Mrs. Dennis Schulist",
-    "SKU": "ERT20854",
-    "description": "Synchronised bottom-line interface",
-    date: 1558142992700, quantity: 5, price: 23.5
-  },
-  {
-    "id": 7,
-    "name": "Kurtis Weissnat",
-    "SKU": "OLK54747",
-    "description": "Configurable multimedia task-force",
-    date: 1558142992700, quantity: 5, price: 23.5
-  },
-  {
-    "id": 8,
-    "name": "Nicholas Runolfsdottir V",
-    "SKU": "RYW14701",
-    "description": "Implemented secondary concept",
-    date: 1558142992700, quantity: 5, price: 23.5
-  },
-  {
-    "id": 9,
-    "name": "Glenna Reichert",
-    "SKU": "LIK01201",
-    "description": "Switchable contextually-based project",
-    date: 1558142992700, quantity: 5, price: 23.5
-  },
-  {
-    "id": 10,
-    "name": "Clementina DuBuque",
-    "SKU": "ARC58124",
-    "description": "Centralized empowering task-force",
-    date: 1558142992700, quantity: 5, price: 23.5
-  }
-];
-
-
-/*
-{
-    "id": 11,
-    "name": "John Graham",
-    "SKU": "ABP87541",
-    "description": "Multi-layered client-server neural-net",
-     date: 1558142992700, quantity: 25, price: 23.5
-  },
-  {
-    "id": 12,
-    "name": "Mary Howell",
-    "SKU": "KLM82147",
-    "description": "Proactive didactic contingency",
-     date: 1558142992700, quantity: 2, price: 123.5
-  },
-  {
-    "id": 13,
-    "name": "Sam Bauch",
-    "SKU": "PRK87452",
-    "description": "Face to face bifurcated interface",
-    date: 1558142992700, quantity: 11, price: 25
-  },
-  {
-    "id": 14,
-    "name": "Patricia Smith",
-    "SKU": "RBB21045",
-    "description": "Multi-tiered zero tolerance productivity",
-    date: 1558142992700, quantity: 87, price: 656
-  },
-  {
-    "id": 15,
-    "name": "Chelsey Lee",
-    "SKU": "LOM94124",
-    "description": "User-centric fault-tolerant solution",
-     date: 1558142992700, quantity: 5, price: 23.5
-  },
-  {
-    "id": 16,
-    "name": "Denny Schulist",
-    "SKU": "ERR80854",
-    "description": "Synchronised bottom-line interface",
-    date: 1558142992700, quantity: 2, price: 26
-  },
-  {
-    "id": 17,
-    "name": "Kurtis Martin",
-    "SKU": "OMP64747",
-    "description": "Configurable multimedia task-force",
-    date: 1558142992700, quantity: 15, price: 29
-  },
-  {
-    "id": 18,
-    "name": "Nicholas Kidman",
-    "SKU": "RYA14711",
-    "description": "Implemented secondary concept",
-    date: 1558142992700, quantity: 45, price: 86.5
-  },
-  {
-    "id": 19,
-    "name": "Glenna Shah",
-    "SKU": "LSH01201",
-    "description": "Switchable contextually-based project",
-    date: 1558142992700, quantity: 15, price: 23.5
-  },
-  {
-    "id": 20,
-    "name": "Clementina Lee",
-    "SKU": "ARD58124",
-    "description": "Centralized empowering task-force",
-    date: 1558142992700, quantity: 15, price: 23.5
-  }*/
+export const jsonData = [  
+   {  
+      "id":1,
+      "SKU":"ABC12345",
+      "name":"Leanne Graham",
+      "description":"Multi-layered client-server neural-net",
+      "quantity":59,
+      "price":213.5,
+      "date":1504315792000
+   },
+   {  
+      "id":2,
+      "SKU":"KLI02147",
+      "name":"Ervin Howell",
+      "description":"Proactive didactic contingency",
+      "quantity":125,
+      "price":35.2,
+      "date":1551234592000
+   },
+   {  
+      "id":3,
+      "SKU":"POK87451",
+      "name":"Clementine Bauch",
+      "description":"Face to face bifurcated interface",
+      "quantity":54,
+      "price":89.2,
+      "date":1533864592000
+   },
+   {  
+      "id":4,
+      "SKU":"RTB21045",
+      "name":"Patricia Lebsack",
+      "description":"Multi-tiered zero tolerance productivity",
+      "quantity":963,
+      "price":12.35,
+      "date":1546309792000
+   },
+   {  
+      "id":5,
+      "SKU":"MNU54124",
+      "name":"Chelsey Dietrich",
+      "description":"User-centric fault-tolerant solution",
+      "quantity":70,
+      "price":13.5,
+      "date":1556674192000
+   },
+   {  
+      "id":6,
+      "SKU":"ERT20854",
+      "name":"Mrs. Dennis Schulist",
+      "description":"Synchronised bottom-line interface",
+      "quantity":89,
+      "price":253.5,
+      "date":1509586192000
+   },
+   {  
+      "id":7,
+      "SKU":"OLK54747",
+      "name":"Kurtis Weissnat",
+      "description":"Configurable multimedia task-force",
+      "quantity":23,
+      "price":89.3,
+      "date":1543372192000
+   },
+   {  
+      "id":8,
+      "SKU":"RYW14701",
+      "name":"Nicholas Runolfsdottir V",
+      "description":"Implemented secondary concept",
+      "quantity":51,
+      "price":86.2,
+      "date":1557284462000
+   },
+   {  
+      "id":9,
+      "SKU":"LIK01201",
+      "name":"Glenna Reichert",
+      "description":"Switchable contextually-based project",
+      "quantity":258,
+      "price":12.54,
+      "date":1558574992000
+   },
+   {  
+      "id":10,
+      "SKU":"ARC58124",
+      "name":"Clementina DuBuque",
+      "description":"Centralized empowering task-force",
+      "quantity":50,
+      "price":13.5,
+      "date":1557889262000
+   },
+   {  
+      "id":12,
+      "SKU":"KRG54789",
+      "name":"Aditya Bhargava",
+      "description":"Design pattern",
+      "quantity":65,
+      "price":124,
+      "date":1556766210000
+   },
+   {  
+      "SKU":"LOP87447",
+      "name":"Susan Trott",
+      "description":"Health care center",
+      "quantity":87,
+      "price":25,
+      "date":1558580678843,
+      "id":13
+   }
+]

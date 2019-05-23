@@ -8,23 +8,21 @@ import {
 } from '../actions'
 
 const updateState = (state, action) => {
-   const widget = state[action.index];
-   if(widget.id !== action.id) {
-     //based on the action.id check the whole list
-   } else {
-     state.splice(action.index, 1, action.payload);
-   }
-   return state;
+  const newState = state.map(function( widget ) {
+    if(widget.id !== action.id) {
+      return widget;
+    } else {
+      return action.payload;
+    }
+  });
+   return newState;
 }
 
 const removeState = (state, action) => {
-   const widget = state[action.index];
-   if(widget.id !== action.id) {
-     //based on the action.id check the whole list
-   } else {
-     state.splice(action.index, 1);
-   }
-   return state;
+  const newState = state.filter(function( widget ) {
+    return widget.id !== action.id;
+  });
+  return newState;
 }
 
 const addState = (state, action) => {

@@ -20,8 +20,8 @@ class MenuTools extends React.Component {
   }
 
   handleSorting = (field, order) => {
-    //const data = sortedData(this.props.allWidgetData, field, order);
-    const data = mergeSort(this.props.allWidgetData, field, order);
+    const data = sortedData(this.props.allWidgetData, field, order);
+    //const data = mergeSort(this.props.allWidgetData, field, order);
     this.props.sortWidget(data);
   }
 

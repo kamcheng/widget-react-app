@@ -8,11 +8,8 @@ const EditableFormHOC = (WrapperComponent) => {
   return class extends React.Component {
     constructor(props) {
       super(props);
-      //const formFields = {SKU: null, name: null, description:null, date: null, quantity: null, price: null};
-      this.emptyFields = { 
-          ...{startDate: new Date()}, 
-          ...this.props.formFields
-      };
+      
+      this.emptyFields = {SKU: "", name: "", description:"", quantity: "", price: "", startDate: moment(new Date(), "MM/DD/YYYY HH:mm").valueOf()};
 
       if(this.props.formType === 'update') {
         this.state = {
@@ -29,11 +26,8 @@ const EditableFormHOC = (WrapperComponent) => {
     }
 
     handleDateChange = (date) => {
-      const ts = moment(date, "MM/DD/YYYY HH:mm").valueOf();
-      console.log(ts)
       this.setState({
-        startDate: date,
-        dateTS: ts
+        startDate: date
       });
     }
 
@@ -55,7 +49,7 @@ const EditableFormHOC = (WrapperComponent) => {
         description: this.state.description,
         quantity: Number(this.state.quantity),
         price: Number(this.state.price),
-        date: this.state.dateTS ? Number(this.state.dateTS) : moment(new Date(), "MM/DD/YYYY HH:mm").valueOf()
+        date: this.state.startDate
       });
 
       this.setState(this.emptyFields);
@@ -63,8 +57,8 @@ const EditableFormHOC = (WrapperComponent) => {
 
     handleUpdate = (event) => {
       event.preventDefault();
+      console.log(moment(this.state.startDate, "MM/DD/YYYY HH:mm").valueOf())
       this.props.updateWidget(
-        this.props.index, 
         this.props.formFields.id, 
         {
           id: this.props.formFields.id,
@@ -73,14 +67,14 @@ const EditableFormHOC = (WrapperComponent) => {
           description: this.state.description,
           quantity: Number(this.state.quantity),
           price: Number(this.state.price),
-          date: Number(this.state.dateTS)
+          date: this.state.startDate
         }
       );
     }
 
     handleDelete = (event) => {
       event.preventDefault();
-      this.props.removeWidget(this.props.index, this.props.formFields.id);
+      this.props.removeWidget(this.props.formFields.id);
     }
 
     renderButton = () => {
@@ -105,6 +99,9 @@ const EditableFormHOC = (WrapperComponent) => {
         <div className="col-md-6 col-lg-4 col-xl-3 boxStyle">
           <WrapperComponent>
             <div className="form-group">
+              {this.props.formFields && this.props.formFields.id ? 
+                (<div><label>ID:</label> {this.props.formFields.id}</div>) : ""}
+
               <label>SKU:</label>
               <input type="text" name="SKU" value={this.state.SKU} className="form-control" onChange={this.handleChange} />
 
@@ -120,7 +117,7 @@ const EditableFormHOC = (WrapperComponent) => {
               <label>Price:</label>
               <input type="text" name="price" value={this.state.price} className="form-control" onChange={this.handleChange} />
 
-              <label>Date:</label>
+              <label>Manufacturing Date:</label>
                 <DatePicker
                   selected={this.state.startDate}
                   onChange={this.handleDateChange}

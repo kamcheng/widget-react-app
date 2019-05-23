@@ -21,7 +21,15 @@ export const mergeSort = (arr, prop, isAsc) => {
 }
 
 export const sortedData = (data, prop, isAsc) => {
-    return data.sort((a, b) => (a[prop] < b[prop] ? -1 : 1) * (isAsc ? 1 : -1));
+    return data.sort((a, b) => {
+        let ap = a[prop];
+        let bp = b[prop];
+        if(isNaN(ap) || isNaN(ap)) {
+            ap = a[prop].toLowerCase();
+            bp = b[prop].toLowerCase();
+        }
+        return (ap < bp ? -1 : 1) * (isAsc ? 1 : -1)
+    })
 }
 
 const searchFieldNames = ["description", "name"];

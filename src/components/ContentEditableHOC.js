@@ -7,10 +7,9 @@ const ContentEditableHOC = (WrapperComponent, updateWidget) => {
 		e.preventDefault();
 		if(element) {
 			const id = Number(element.getAttribute("id"));
-			const index = Number(element.getAttribute("index"));
 			const text = element.textContent;
 			console.log(text)
-			updateWidget(index, id, text);
+			updateWidget(id, text);
 		}
 	}
 

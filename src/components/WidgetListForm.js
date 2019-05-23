@@ -10,7 +10,6 @@ const WidgetListForm = ({allWidgetData, updateWidget, removeWidget}) => {
         {allWidgetData.map((widget, i) => (
           <EditableForm
             key = { widget.id }
-            index = {i}
             updateWidget = { updateWidget }
             removeWidget = { removeWidget }
             formType = { "update" }
