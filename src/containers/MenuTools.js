@@ -39,7 +39,7 @@ class MenuTools extends React.Component {
 
   search = _.debounce((query) => {
     this.handleSearch(query)
-  }, 1000)
+  }, 500)
 
   render() {
     return (
