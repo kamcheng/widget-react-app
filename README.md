@@ -26,4 +26,4 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 ### `npm install -g json-server` ###
-Get a full fake REST API: https://github.com/typicode/json-server###
+Get a full fake REST API: https://github.com/typicode/json-server

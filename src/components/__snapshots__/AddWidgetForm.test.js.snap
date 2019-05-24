@@ -8,181 +8,86 @@ exports[`AddWidgetForm renders correctly 1`] = `
     <div
       className="form-group"
     >
+      
       <label>
         SKU:
+        <input
+          className="form-control"
+          name="SKU"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
       </label>
-      <input
-        className="form-control"
-        name="SKU"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
       <label>
         Name:
+        <input
+          className="form-control"
+          name="name"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
       </label>
-      <input
-        className="form-control"
-        name="name"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
       <label>
         Description:
+        <input
+          className="form-control"
+          name="description"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
       </label>
-      <input
-        className="form-control"
-        name="description"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
       <label>
         Quantity:
+        <input
+          className="form-control"
+          name="quantity"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
       </label>
-      <input
-        className="form-control"
-        name="quantity"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
       <label>
         Price:
+        <input
+          className="form-control"
+          name="price"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
       </label>
-      <input
-        className="form-control"
-        name="price"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
       <label>
-        Date:
-      </label>
-      <div
-        className="react-datepicker-wrapper"
-      >
+        Manufacturing Date:
         <div
-          className="react-datepicker__input-container"
+          className="react-datepicker-wrapper"
         >
-          <input
-            className=""
-            disabled={false}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            readOnly={false}
-            type="text"
-            value="05/21/2019"
-          />
+          <div
+            className="react-datepicker__input-container"
+          >
+            <input
+              className=""
+              disabled={false}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onClick={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              readOnly={false}
+              type="text"
+              value="05/24/2019"
+            />
+          </div>
         </div>
-      </div>
+      </label>
     </div>
     <div
       className="form-group"
     >
       <button
-        className="btn btn-primary btn-sm"
-        onClick={[Function]}
-        type="button"
-      >
-        Add
-      </button>
-    </div>
-  </form>
-</div>
-`;
-
-exports[`renders correctly 1`] = `
-<div
-  className="col-md-6 col-lg-4 col-xl-3 boxStyle"
->
-  <form>
-    <div
-      className="form-group"
-    >
-      <label>
-        SKU:
-      </label>
-      <input
-        className="form-control"
-        name="SKU"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-      <label>
-        Name:
-      </label>
-      <input
-        className="form-control"
-        name="name"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-      <label>
-        Description:
-      </label>
-      <input
-        className="form-control"
-        name="description"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-      <label>
-        Quantity:
-      </label>
-      <input
-        className="form-control"
-        name="quantity"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-      <label>
-        Price:
-      </label>
-      <input
-        className="form-control"
-        name="price"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-      <label>
-        Date:
-      </label>
-      <div
-        className="react-datepicker-wrapper"
-      >
-        <div
-          className="react-datepicker__input-container"
-        >
-          <input
-            className=""
-            disabled={false}
-            onBlur={[Function]}
-            onChange={[Function]}
-            onClick={[Function]}
-            onFocus={[Function]}
-            onKeyDown={[Function]}
-            readOnly={false}
-            type="text"
-            value="05/21/2019"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      className="form-group"
-    >
-      <button
+        aria-label="Add Widget"
         className="btn btn-primary btn-sm"
         onClick={[Function]}
         type="button"

@@ -57,7 +57,7 @@ const EditableFormHOC = (WrapperComponent) => {
 
     handleUpdate = (event) => {
       event.preventDefault();
-      console.log(moment(this.state.startDate, "MM/DD/YYYY HH:mm").valueOf())
+     
       this.props.updateWidget(
         this.props.formFields.id, 
         {
@@ -67,7 +67,9 @@ const EditableFormHOC = (WrapperComponent) => {
           description: this.state.description,
           quantity: Number(this.state.quantity),
           price: Number(this.state.price),
-          date: this.state.startDate
+          date: this.state.startDate instanceof Date ? 
+                moment(this.state.startDate, "MM/DD/YYYY HH:mm").valueOf() : 
+                this.state.startDate
         }
       );
     }
@@ -80,15 +82,15 @@ const EditableFormHOC = (WrapperComponent) => {
     renderButton = () => {
       if(this.props.formType === 'update') {
         return (
-          <div className="icon">
-              <i className="fa fa-floppy-o" title="Update" onClick={this.handleUpdate}></i>
-              <i className="fa fa-trash-o" title="Delete" onClick={this.handleDelete}></i>        
+          <div className="form-group">
+            <button aria-label="Update Widget" type="button" className="btn btn-primary btn-sm" onClick={this.handleUpdate}>Update</button>
+            <button aria-label="Remove Widget" type="button" className="btn btn-primary btn-sm" onClick={this.handleDelete}>Delete</button>
           </div>
         )
       } else {
          return (
           <div className="form-group">
-            <button type="button" className="btn btn-primary btn-sm" onClick={this.handleAdd}>Add</button>
+            <button aria-label="Add Widget" type="button" className="btn btn-primary btn-sm" onClick={this.handleAdd}>Add</button>
           </div>
         ) 
       }
@@ -100,28 +102,34 @@ const EditableFormHOC = (WrapperComponent) => {
           <WrapperComponent>
             <div className="form-group">
               {this.props.formFields && this.props.formFields.id ? 
-                (<div><label>ID:</label> {this.props.formFields.id}</div>) : ""}
+                (<label>ID: {this.props.formFields.id}</label>) : ""}
 
-              <label>SKU:</label>
-              <input type="text" name="SKU" value={this.state.SKU} className="form-control" onChange={this.handleChange} />
+              <label>SKU:
+                <input type="text" name="SKU" value={this.state.SKU} className="form-control" onChange={this.handleChange} />
+              </label>
 
-              <label>Name:</label>
-              <input type="text" name="name" value={this.state.name} className="form-control" onChange={this.handleChange} />
+              <label>Name:
+                <input type="text" name="name" value={this.state.name} className="form-control" onChange={this.handleChange} />
+              </label>
 
-              <label>Description:</label>
-              <input type="text" name="description" value={this.state.description} className="form-control" onChange={this.handleChange} />
+              <label>Description:
+                <input type="text" name="description" value={this.state.description} className="form-control" onChange={this.handleChange} />
+              </label>
 
-              <label>Quantity:</label>
-              <input type="text" name="quantity" value={this.state.quantity} className="form-control" onChange={this.handleChange} />
+              <label>Quantity:
+                <input type="text" name="quantity" value={this.state.quantity} className="form-control" onChange={this.handleChange} />
+              </label>
 
-              <label>Price:</label>
-              <input type="text" name="price" value={this.state.price} className="form-control" onChange={this.handleChange} />
+              <label>Price:
+                <input type="text" name="price" value={this.state.price} className="form-control" onChange={this.handleChange} />
+              </label>
 
-              <label>Manufacturing Date:</label>
+              <label>Manufacturing Date:
                 <DatePicker
                   selected={this.state.startDate}
                   onChange={this.handleDateChange}
                 />
+              </label>
             </div>
             {this.renderButton()}
           </WrapperComponent>

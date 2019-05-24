@@ -1,9 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import _ from 'lodash';
-import WidgetListForm from '../components/WidgetListForm';
-import { sortedData, mergeSort, searchData } from '../util'
-import { sortWidget, searchWidget, actionTool } from '../actions';
+import { sortedData, searchData } from '../util'
+import { sortWidget, searchWidget, actionTool, reFetchWidgets } from '../actions';
 
 class MenuTools extends React.Component {
   constructor(props) {
@@ -30,8 +29,8 @@ class MenuTools extends React.Component {
       this.originalData= _.clone(this.props.allWidgetData);
     }
 
-    if(query == "") {
-      this.props.searchWidget(this.originalData);
+    if(query === "") {
+      this.props.reFetchWidgets();
     } else {
       const data = searchData(this.originalData, query);
       this.props.searchWidget(data);
@@ -45,26 +44,29 @@ class MenuTools extends React.Component {
   render() {
     return (
       <div className="row menutools">
-        <div className="icon" onClick={() => this.handleAddWidget()}>
+        <h6 className="icon" onClick={() => this.handleAddWidget()}>
           Add Widget
-        </div>
+        </h6>
 
-        <div>Sort by: &nbsp;</div>
-        <div className="icon" onClick={() => this.handleSorting("name", this.asc_name=!this.asc_name)}>
+        <h6>Sort by: &nbsp;</h6>
+        <h6 className="icon" onClick={() => this.handleSorting("name", this.asc_name=!this.asc_name)}>
           Name
-        </div>
-        <div className="icon" onClick={() => this.handleSorting("date", this.asc_date=!this.asc_date)}>
+        </h6>
+        <h6 className="icon" onClick={() => this.handleSorting("date", this.asc_date=!this.asc_date)}>
           Date
-        </div>
-        <div className="searchInput">
-          <i className="fa fa-search"></i>
-          <input
-              type="text"
-              value={this.state.searchQuery}
-              onChange={(e) => {this.search(e.target.value)}}
-              placeholder="Search by title or author"
-          />
-        </div>
+        </h6>
+        <form className="searchInput" name="Search">
+          <label><span className="friendlyHide">Search</span>
+            <i className="fa fa-search"></i>
+            <input
+                name="search"
+                type="text"
+                value={this.state.searchQuery}
+                onChange={(e) => {this.search(e.target.value)}}
+                placeholder="Search by name or description"
+            />
+          </label>
+        </form>
       </div>
     );
   }
@@ -82,7 +84,8 @@ function mapDispatchToProps(dispatch) {
   return {
     sortWidget: (data) => dispatch(sortWidget(data)),
     searchWidget: (data) => dispatch(searchWidget(data)),
-    actionTool: (show) => dispatch(actionTool(show))
+    actionTool: (show) => dispatch(actionTool(show)),
+    reFetchWidgets: () => dispatch(reFetchWidgets())
   }
 }
 

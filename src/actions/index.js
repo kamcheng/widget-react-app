@@ -15,6 +15,18 @@ export const fetchWidgets = () => {
   }
 }
 
+export const reFetchWidgets = (newData) => {
+  return (dispatch) => {
+    return axios.get('http://localhost:3000/widgets')
+      .then(response => {
+        dispatch(searchWidget(response.data))
+      })
+      .catch(error => {
+        throw(error);
+      });
+  };
+};
+
 export const addWidget = (newData) => {
   return (dispatch) => {
     return axios.post('http://localhost:3000/widgets', newData)

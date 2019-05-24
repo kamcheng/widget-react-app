@@ -37,7 +37,7 @@ const searchFieldNames = ["description", "name"];
 export const searchData = (data, query) => {
     return data.filter((widget) => {
         return searchFieldNames.find((field) => {
-            return widget[field].toLowerCase().indexOf(query.toLowerCase()) != -1
+            return widget[field].toLowerCase().indexOf(query.toLowerCase()) !== -1
         })
     })
 }
