@@ -6,8 +6,10 @@ export const GET_WIDGET = 'GET_WIDGET'
 export const SORT_WIDGET = 'SORT_WIDGET'
 export const SEARCH_WIDGET = 'SEARCH_WIDGET'
 
+const serviceURL = "http://localhost:3000";
+
 export const fetchWidgets = () => {
-  const request = axios.get('http://localhost:3000/widgets');
+  const request = axios.get(serviceURL+'/widgets');
   return(dispatch) => {
     request.then(({data}) => {
       dispatch(getWidget(data))
@@ -15,21 +17,9 @@ export const fetchWidgets = () => {
   }
 }
 
-export const reFetchWidgets = (newData) => {
-  return (dispatch) => {
-    return axios.get('http://localhost:3000/widgets')
-      .then(response => {
-        dispatch(searchWidget(response.data))
-      })
-      .catch(error => {
-        throw(error);
-      });
-  };
-};
-
 export const addWidget = (newData) => {
   return (dispatch) => {
-    return axios.post('http://localhost:3000/widgets', newData)
+    return axios.post(serviceURL+'/widgets', newData)
       .then(response => {
         dispatch(addWidgetSuccess(response.data))
       })
@@ -41,7 +31,7 @@ export const addWidget = (newData) => {
 
 export const updateWidget = (id, newData) => {
   return (dispatch) => {
-    return axios.put('http://localhost:3000/widgets/'+id, newData)
+    return axios.put(serviceURL+'/widgets/'+id, newData)
       .then(response => {
         dispatch(updateWidgetSuccess(response.data))
       })
@@ -53,9 +43,21 @@ export const updateWidget = (id, newData) => {
 
 export const removeWidget = (id, newData) => {
   return (dispatch) => {
-    return axios.delete('http://localhost:3000/widgets/'+id)
+    return axios.delete(serviceURL+'/widgets/'+id)
       .then(response => {
         dispatch(removeWidgetSuccess(id))
+      })
+      .catch(error => {
+        throw(error);
+      });
+  };
+};
+
+export const reFetchWidgets = (newData) => {
+  return (dispatch) => {
+    return axios.get(serviceURL+'/widgets')
+      .then(response => {
+        dispatch(searchWidget(response.data))
       })
       .catch(error => {
         throw(error);
