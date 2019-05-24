@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { updateWidget, removeWidget, sortWidget } from '../actions';
 import WidgetListForm from '../components/WidgetListForm';
-import { fetchWidgets } from '../services';
 
 function mapStateToProps(state) {
   return {

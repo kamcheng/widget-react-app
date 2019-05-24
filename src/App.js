@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchWidgets } from './services';
+import { fetchWidgets } from './actions';
 import WidgetListContainer from './containers/WidgetListContainer';
 import AddWidgetContainer from './containers/AddWidgetContainer';
 import MenuTools from './containers/MenuTools';

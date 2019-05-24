@@ -76,6 +76,8 @@ label {
     left: 17px;
 }
 
+label { display: block; }
+
 .hide {display: none}
 
 .show {display: block;}

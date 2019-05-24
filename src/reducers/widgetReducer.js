@@ -15,7 +15,7 @@ const updateState = (state, action) => {
       return action.payload;
     }
   });
-   return newState;
+  return newState;
 }
 
 const removeState = (state, action) => {
@@ -26,7 +26,7 @@ const removeState = (state, action) => {
 }
 
 const addState = (state, action) => {
-  return [{...action.payload, ...{id: action.id}}];
+  return [{...action.payload}];
 }
 
 let newState = [];
@@ -41,17 +41,14 @@ const widgetReducer = (state = [], action) => {
 
     case UPDATE_WIDGET:
       newState = [...updateState(state, action)];
-      localStorage.setItem("widgetStorage", JSON.stringify(newState));
       return newState
    
     case REMOVE_WIDGET:
       newState = [...removeState(state, action)];
-      localStorage.setItem("widgetStorage", JSON.stringify(newState));
       return newState
 
     case ADD_WIDGET:
       newState = [...state, ...addState(state, action)];
-      localStorage.setItem("widgetStorage", JSON.stringify(newState));
       return newState
 
     case SORT_WIDGET:
